@@ -2,18 +2,17 @@ import streamlit as st
 from ultralytics import YOLO
 import cv2
 import time
-import pyttsx3  # Library for text-to-speech
+#import pyttsx3 
 
-# Initialize the TTS engine
-tts_engine = pyttsx3.init()
+#tts_engine = pyttsx3.init()
 
 # Load YOLO model
-model = YOLO(r"C:\Users\aadit\Downloads\streamlit-signlanguage\best1.pt")
+model = YOLO("best.pt")
 
 # Speak the detected sign out loud
-def speak_text(text):
-    tts_engine.say(text)
-    tts_engine.runAndWait()
+#def speak_text(text):
+#     tts_engine.say(text)
+#     tts_engine.runAndWait()
 
 # Process the webcam feed and run the model with TTS every 3 seconds
 def webcam_with_yolo():
@@ -60,7 +59,7 @@ def webcam_with_yolo():
                 current_time = time.time()
                 if current_time - last_tts_time >= 3:
                     last_tts_time = current_time
-                    speak_text(detected_text)
+                    #speak_text(detected_text)
             else:
                 detected_placeholder.write("No signs detected.")
 
