@@ -2,3 +2,5 @@ ultralytics
 opencv-python-headless
 pyttsx3
 streamlit
+libgl1-mesa-dev
+libgl1-mesa-glx
